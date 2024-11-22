@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApp1.PromptPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Prompt" Height="450" Width="800" WindowState="Maximized" Name="mainWindow">
+    <Grid Background="#FF2F2F2F">
+        <Border x:Name="border" BorderBrush="Black" BorderThickness="0 0 0 1 " Height="55" VerticalAlignment="Top">
+            <Label Content="CompareAI" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFFFFF82" FontSize="24" FontFamily="Bahnschrift Light" Padding="5,5,5,5"/>
+        </Border>
+        <TextBox
+            Name="txtPrompt" 
+    PreviewMouseDown="TextBox_MouseDown" Width="480" VerticalAlignment="Top" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="0,311,0,0" Height="60" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="20,0,0,0" FontSize="16" FontFamily="Calibri" Background="#FF5B5B5B" BorderBrush="{x:Null}" SelectionBrush="#FF77CFE6" SelectionTextBrush="#FF77CFE6" Cursor="" ToolTip="Enter a Product" Text="Enter a Product" BorderThickness="0,0,0,0" Foreground="White">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="30"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Label Content="CompareAI Prompting" HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" Foreground="#FFFDFA7B" FontSize="30" FontFamily="Bahnschrift Light" IsEnabled="False" Width="392" HorizontalContentAlignment="Center"/>
+        <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Start by searching for a product using the prompt editor." VerticalAlignment="Center" Width="438" Background="#00000000" Foreground="#FFFDFA7B" Height="50" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Leelawadee" FontStretch="Normal" IsReadOnly="True" Focusable="False" BorderBrush="#00ABADB3" Cursor="Arrow" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderThickness="0,0,0,0" IsUndoEnabled="False" />
+
+    </Grid>
+</Window>
