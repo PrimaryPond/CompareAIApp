@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="lib\box-rectangle-svgrepo-com.png" />
+    <None Remove="lib\box-rectangle.svg" />
+    <None Remove="Screenshot 2024-09-19 100325.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="lib\box-rectangle-svgrepo-com.png" />
+    <Resource Include="lib\box-rectangle.svg" />
+    <Resource Include="Screenshot 2024-09-19 100325.png" />
+  </ItemGroup>
+
 </Project>
