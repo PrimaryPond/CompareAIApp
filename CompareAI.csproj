@@ -20,4 +20,8 @@
     <Resource Include="Screenshot 2024-09-19 100325.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Snips\" />
+  </ItemGroup>
+
 </Project>

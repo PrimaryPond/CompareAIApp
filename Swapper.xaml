@@ -9,6 +9,6 @@
       Title="Swapper">
 
     <Grid Background="White">
-        
+        <local:Product></local:Product>
     </Grid>
 </Page>

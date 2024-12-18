@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:CompareAI"
         mc:Ignorable="d"
         Title="Prompt" Height="450" Width="800" Name="mainWindow">
     <Window.Resources>
@@ -254,58 +254,32 @@
                 <RowDefinition Height="43*"/>
                 <RowDefinition Height="11*"/>
             </Grid.RowDefinitions>
-           
+
             <TextBox
                 Name="txtPrompt" 
         PreviewMouseDown="TextBox_MouseDown" Width="480" VerticalAlignment="Top" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="0,7,0,0" Height="60" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="20,0,0,0" FontSize="16" FontFamily="Calibri" Background="#FFDADADA" BorderBrush="{x:Null}" SelectionBrush="#FF77CFE6" SelectionTextBrush="#FF77CFE6" Cursor="" ToolTip="Enter a Product" Text="Search for a Product" BorderThickness="0,0,0,0" Foreground="Black" Grid.Row="2"/>
-            <ScrollViewer Template="{DynamicResource ViewerScrollBar}" Grid.Row="1" Margin="0,5,0,0">
+            <!--<ScrollViewer Template="{DynamicResource ViewerScrollBar}" VirtualizingPanel.ScrollUnit="Pixel" Grid.Row="1" Margin="0,5,0,0">
+                <StackPanel Margin="0,0,0,16" OverridesDefaultStyle="False" Height="298">
+                    <local:Product ProductName="hello" ProductDesc="hi my name is"></local:Product>
+                    <local:Product ProductName="not hi"></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
 
-                <StackPanel Margin="0,0,0,16" CanVerticallyScroll="True" MaxHeight="300" VerticalAlignment="Top" ScrollViewer.CanContentScroll="True" Height="298">
-                    <Grid Height="100" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="7*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="7*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="/lib/box-rectangle-svgrepo-com.png" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Left" Height="140" Margin="0,-20,0,0" Grid.RowSpan="2" />
-                        <Label Content="Product Name" Grid.ColumnSpan="1" Margin="5,8,154,64" Grid.Column="1" FontSize="16" Grid.RowSpan="2" />
-                        <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Product description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet consectetur sapien, nec egestas ex. Nam venenatis ut ex eu mattis. " VerticalAlignment="Center" Width="312" Height="66"/>
-                        <Button Grid.Column="1" Content="+" HorizontalAlignment="Left" Margin="254,10,0,0" VerticalAlignment="Top" Width="28" Height="20" Padding="1,-3,1,0"/>
-                        <Button Grid.Column="1" Content="..." HorizontalAlignment="Left" Margin="286,10,0,0" VerticalAlignment="Top" Width="36" Height="20" Padding="1,-17,1,-3" FontSize="20"/>
-                    </Grid>
-                    <Grid Height="100" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="7*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="7*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="/lib/box-rectangle-svgrepo-com.png" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Left" Height="140" Margin="0,-20,0,0" Grid.RowSpan="2" Width="144" />
-                        <Label Content="Product Name" Grid.ColumnSpan="1" Margin="5,1,132,0" Grid.Column="1" FontSize="16" />
-                        <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Product description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet consectetur sapien, nec egestas ex. Nam venenatis ut ex eu mattis. " VerticalAlignment="Top" Width="312" Height="65" IsTabStop="False" AllowDrop="False" Cursor="IBeam"/>
-                        <Button Grid.Column="1" Content="+" HorizontalAlignment="Left" Margin="250,0,0,0" VerticalAlignment="Center" Width="28" Height="18" Padding="1,-3,1,0"/>
-                        <Button Grid.Column="1" Content="..." HorizontalAlignment="Left" Margin="284,0,0,0" VerticalAlignment="Center" Width="36" Height="18" Padding="1,-17,1,-3" FontSize="20"/>
-                    </Grid>
-                    <Grid Height="100" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="7*"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="7*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="/lib/box-rectangle-svgrepo-com.png" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Left" Height="140" Margin="0,-20,0,0" Grid.RowSpan="2" />
-                        <Label Content="Product Name" Grid.ColumnSpan="1" Margin="5,3,212,67" Grid.Column="1" FontSize="16" Grid.RowSpan="2" />
-                        <TextBox Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Product description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet consectetur sapien, nec egestas ex. Nam venenatis ut ex eu mattis. " VerticalAlignment="Center" Width="312" Height="66"/>
-                        <Button Grid.Column="1" Content="+" HorizontalAlignment="Left" Margin="252,8,0,0" VerticalAlignment="Top" Width="30" Height="20" Padding="1,-3,1,0"/>
-                        <Button Grid.Column="1" Content="..." HorizontalAlignment="Left" Margin="286,8,0,0" VerticalAlignment="Top" Width="36" Height="20" Padding="1,-17,1,-3" FontSize="20"/>
-                    </Grid>
+                </StackPanel>
+            </ScrollViewer>-->
+            <ScrollViewer Margin="0,0,0,137" Grid.RowSpan="2">
+                <StackPanel>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+                    <local:Product></local:Product>
+
                 </StackPanel>
             </ScrollViewer>
 
