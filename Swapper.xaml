@@ -9,6 +9,20 @@
       Title="Swapper">
 
     <Grid Background="White">
-        <local:Product></local:Product>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="27*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Label Content="CompareAI" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" FontFamily="Bahnschrift Light" Padding="5,5,5,5" RenderTransformOrigin="-0.433,0.246"/>
+            <Label Content="Home" Margin="703,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light" Padding="5,5,5,5"/>
+        </Grid>
+        <Border x:Name="border" BorderBrush="Black" BorderThickness="0 0 0 1 " Height="55" VerticalAlignment="Center">
+
+
+        </Border>
+        
+        
+        
     </Grid>
 </Page>

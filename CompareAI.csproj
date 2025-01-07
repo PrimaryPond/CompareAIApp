@@ -24,4 +24,16 @@
     <Folder Include="Snips\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="ComparePage - Copy.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="ComparePage - Copy.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>
