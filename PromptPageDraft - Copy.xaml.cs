@@ -24,7 +24,7 @@ namespace WpfApp1
 
         private void TextBox_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (txtPrompt.Text.Equals("Search for a Product")) { txtPrompt.Text = ""; }
+            if (txtPrompt.Text.Equals("Search for a Different Product")) { txtPrompt.Text = ""; }
             
         }
 

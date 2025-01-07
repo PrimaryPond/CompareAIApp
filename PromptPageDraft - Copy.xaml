@@ -257,7 +257,7 @@
 
             <TextBox
                 Name="txtPrompt" 
-        PreviewMouseDown="TextBox_MouseDown" Width="480" VerticalAlignment="Top" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="0,7,0,0" Height="60" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="20,0,0,0" FontSize="16" FontFamily="Calibri" Background="#FFDADADA" BorderBrush="{x:Null}" SelectionBrush="#FF77CFE6" SelectionTextBrush="#FF77CFE6" Cursor="" ToolTip="Enter a Product" Text="Search for a Product" BorderThickness="0,0,0,0" Foreground="Black" Grid.Row="2"/>
+        PreviewMouseDown="TextBox_MouseDown" Width="480" VerticalAlignment="Top" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="0,7,0,0" Height="60" HorizontalAlignment="Center" VerticalContentAlignment="Center" Padding="20,0,0,0" FontSize="16" FontFamily="Calibri" Background="#FFDADADA" BorderBrush="{x:Null}" SelectionBrush="#FF77CFE6" SelectionTextBrush="#FF77CFE6" Cursor="" ToolTip="Enter a Product" Text="Search for a different Product" BorderThickness="0,0,0,0" Foreground="Black" Grid.Row="2"/>
             <!--<ScrollViewer Template="{DynamicResource ViewerScrollBar}" VirtualizingPanel.ScrollUnit="Pixel" Grid.Row="1" Margin="0,5,0,0">
                 <StackPanel Margin="0,0,0,16" OverridesDefaultStyle="False" Height="298">
                     <local:Product ProductName="hello" ProductDesc="hi my name is"></local:Product>
@@ -269,11 +269,11 @@
 
                 </StackPanel>
             </ScrollViewer>-->
-            <ScrollViewer Margin="0,0,0,73" Grid.RowSpan="3">
+            <ScrollViewer Margin="0,32,0,73" Grid.RowSpan="3">
                 <StackPanel>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
                     <local:Product></local:Product>
                     <local:Product></local:Product>
                     <local:Product></local:Product>
@@ -282,6 +282,7 @@
 
                 </StackPanel>
             </ScrollViewer>
+            <Label Content="Reccomended Products" HorizontalAlignment="Left" Margin="0,-2,0,0" Grid.RowSpan="2" VerticalAlignment="Top" FontSize="18"/>
 
 
         </Grid>
