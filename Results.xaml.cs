@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace CompareAI
 {
     /// <summary>
-    /// Interaction logic for ComparePage.xaml
+    /// Interaction logic for Swapper.xaml
     /// </summary>
-    public partial class ComparePage : Page
+    public partial class Results : Page
     {
-        public ComparePage()
+        public Results()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

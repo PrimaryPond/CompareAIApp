@@ -25,13 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ComparePage - Copy.xaml.cs">
+    <Compile Update=".xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Results.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="ComparePage - Copy.xaml">
+    <Page Update="Results.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

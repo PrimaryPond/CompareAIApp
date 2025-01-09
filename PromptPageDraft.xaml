@@ -271,19 +271,17 @@
             </ScrollViewer>-->
             <ScrollViewer Margin="0,0,0,73" Grid.RowSpan="3">
                 <StackPanel>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-                    <local:Product></local:Product>
-
+                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:Product ProductName="Product Name"></local:Product>
                 </StackPanel>
             </ScrollViewer>
 
 
         </Grid>
+        <Button Content="-&gt;" HorizontalAlignment="Left" Margin="578,328,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click" Width="38" FontSize="16"/>
     </Grid>
 </Window>
