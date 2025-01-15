@@ -18,7 +18,7 @@ namespace CompareAI
     /// <summary>
     /// Interaction logic for ComparePage.xaml
     /// </summary>
-    public partial class ComparePage : Page
+    public partial class ComparePage : Window
     {
         public ComparePage()
         {

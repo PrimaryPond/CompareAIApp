@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using CompareAI;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -21,9 +22,14 @@ namespace WpfApp1
             InitializeComponent();
         }
 
+        private void btn_startCompare_Click(object sender, RoutedEventArgs e)
+        {
+           
+            ComparePage p = new ComparePage();
+            p.Show();
 
-      
-
-       
+            this.Close();
+            
+        }
     }
 }
