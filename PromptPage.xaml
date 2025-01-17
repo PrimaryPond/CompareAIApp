@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Prompt" Height="450" Width="800" WindowState="Maximized" Name="mainWindow">
+        Title="Prompt" Height="450" Width="800" Name="mainWindow" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF2F2F2F">
         <Border x:Name="border" BorderBrush="Black" BorderThickness="0 0 0 1 " Height="55" VerticalAlignment="Top">
             <Label Content="CompareAI" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFFFFF82" FontSize="24" FontFamily="Bahnschrift Light" Padding="5,5,5,5"/>

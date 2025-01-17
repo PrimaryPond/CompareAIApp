@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Name="mainWindow">
-    <Grid Background="#FF2F2F2F">
-        <Border x:Name="border" BorderBrush="Black" BorderThickness="0 0 0 1 " Height="55" VerticalAlignment="Top">
-            <Label Content="CompareAI" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="#FFFFFF82" FontSize="24" FontFamily="Bahnschrift Light" Padding="5,5,5,5"/>
+        Title="MainWindow" Height="450" Width="800" Name="mainWindow" WindowStartupLocation="CenterScreen">
+    <Grid Background="{StaticResource BackgroundColor}">
+        <Border x:Name="border" BorderBrush="{StaticResource ForegroundColor}" BorderThickness="0 0 0 1 " Height="55" VerticalAlignment="Top">
+            <Label Content="CompareAI" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{StaticResource TextColor}" FontSize="24" FontFamily="Bahnschrift Light" Padding="5,5,5,5"/>
         </Border>
-        <Label Content="Welcome to CompareAI!" HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" Foreground="#FFFDFA7B" FontSize="30" FontFamily="Bahnschrift Light" IsEnabled="False"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,171,0,0" TextWrapping="Wrap" Text="With this app you can compare two different products without the hassle of finding the products! It saves time for you and allows for a more educated decision on your purchases." VerticalAlignment="Top" Width="438" Background="#00000000" Foreground="#FFFDFA7B" Height="50" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Leelawadee" FontStretch="Normal" IsReadOnly="True" Focusable="False" BorderBrush="#00ABADB3" Cursor="Arrow" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderThickness="0,0,0,0" IsUndoEnabled="False">
+        <Label Content="Welcome to CompareAI!" HorizontalAlignment="Center" Margin="0,107,0,0" VerticalAlignment="Top" Foreground="{StaticResource TextColor}" FontSize="30" FontFamily="Bahnschrift Light" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,171,0,0" TextWrapping="Wrap" Text="With this app you can compare two different products without the hassle of finding the products! It saves time for you and allows for a more educated decision on your purchases." VerticalAlignment="Top" Width="438" Background="#00000000" Foreground="{StaticResource TextColor}" Height="50" HorizontalContentAlignment="Center" FontSize="14" FontFamily="Leelawadee" FontStretch="Normal" IsReadOnly="True" Focusable="False" BorderBrush="#00ABADB3" Cursor="Arrow" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderThickness="0,0,0,0" IsUndoEnabled="False">
         </TextBox>
-        <Button x:Name="btn_startCompare" Content="Start CompareAI" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" BorderThickness="0,0,0,0" Height="50" Width="160" FontFamily="Bahnschrift" FontSize="16" Background="#FF5B5B5B" Foreground="White" Click="btn_startCompare_Click" Cursor="Hand">
+        <Button x:Name="btn_startCompare" Content="Start CompareAI" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" BorderThickness="0,0,0,0" Height="50" Width="160" FontFamily="Bahnschrift" FontSize="16" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Click="btn_startCompare_Click" Cursor="Hand">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="25"/>

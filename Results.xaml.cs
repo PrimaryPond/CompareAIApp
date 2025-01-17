@@ -18,7 +18,7 @@ namespace CompareAI
     /// <summary>
     /// Interaction logic for Swapper.xaml
     /// </summary>
-    public partial class Results : Page
+    public partial class Results : Window
     {
         public Results()
         {

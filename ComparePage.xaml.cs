@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1;
 
 namespace CompareAI
 {
@@ -27,6 +28,35 @@ namespace CompareAI
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+
+        private void btn_home_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow p = new MainWindow();
+                        p.Show();
+
+                        this.Close();
+        }
+
+        private void btn_search_one_Click(object sender, RoutedEventArgs e)
+        {
+            PromptPage p = new PromptPage();
+            p.Show();
+
+        }
+
+        private void btn_search_two_Click(object sender, RoutedEventArgs e)
+        {
+            PromptPage p = new PromptPage();
+            p.Show();
+        }
+
+        private void btn_start_Click(object sender, RoutedEventArgs e)
+        {
+            Results p = new Results();
+            p.Show();
 
         }
     }
