@@ -271,12 +271,12 @@
             </ScrollViewer>-->
             <ScrollViewer Margin="0,0,0,73" Grid.RowSpan="3">
                 <StackPanel>
-                    <local:Product ProductName="Product Name"></local:Product>
-                    <local:Product ProductName="Product Name"></local:Product>
-                    <local:Product ProductName="Product Name"></local:Product>
-                    <local:Product ProductName="Product Name"></local:Product>
-                    <local:Product ProductName="Product Name"></local:Product>
-                    <local:Product ProductName="Product Name"></local:Product>
+                    <local:ProductPanel ProductName="Product Name"></local:ProductPanel>
+                    <local:ProductPanel ProductName="Product Name"></local:ProductPanel>
+                    <local:ProductPanel ProductName="Product Name"></local:ProductPanel>
+                    <local:ProductPanel ProductName="Product Name"></local:ProductPanel>
+                    <local:ProductPanel ProductName="Product Name"></local:ProductPanel>
+                    <local:ProductPanel ProductName="Product Name"></local:ProductPanel>
                 </StackPanel>
             </ScrollViewer>
 

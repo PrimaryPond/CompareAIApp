@@ -28,6 +28,9 @@ namespace WpfApp1
             
         }
 
-       
+        private void btn_Enter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

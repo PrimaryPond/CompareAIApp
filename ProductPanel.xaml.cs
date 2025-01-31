@@ -18,7 +18,7 @@ namespace CompareAI
     /// <summary>
     /// Interaction logic for Product.xaml
     /// </summary>
-    public partial class Product : UserControl
+    public partial class ProductPanel : UserControl
     {
         private string productName;
         public string ProductName
@@ -39,7 +39,7 @@ namespace CompareAI
                 tbProductDesc.Text = productDesc;
             }
         }
-        public Product()
+        public ProductPanel()
         {
             InitializeComponent();
         }
