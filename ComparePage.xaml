@@ -41,7 +41,7 @@
                 <Label Content="         - or -&#xA;Paste Source Link" Width="132" Foreground="{StaticResource TextColor}" Height="40" HorizontalContentAlignment="Center" Margin="0,0,0,11"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox TextWrapping="Wrap" Background="{StaticResource ButtonColor}"  Text="" Width="199" TextChanged="TextBox_TextChanged" BorderBrush="{DynamicResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}"/>
-                    <Button x:Name="btn_link_search_one" Content="Search" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}"/>
+                    <Button x:Name="btn_link_search_one" Content="Search" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_link_search_one_Click"/>
                 </StackPanel>
 
 
@@ -55,7 +55,7 @@
                 <Label Content="         - or -&#xA;Paste Source Link" Width="132" Foreground="{StaticResource TextColor}" Height="40" HorizontalContentAlignment="Center" Margin="0,0,0,11"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox TextWrapping="Wrap" Text="" Width="199" TextChanged="TextBox_TextChanged" Background="{StaticResource ButtonColor}" BorderBrush="{StaticResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}"/>
-                    <Button x:Name="btn_link_search_two" Content="Search" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}"/>
+                    <Button x:Name="btn_link_search_two" Content="Search" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_link_search_two_Click"/>
                 </StackPanel>
 
             </StackPanel>

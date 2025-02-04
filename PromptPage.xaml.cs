@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using CompareAI;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -30,7 +31,13 @@ namespace WpfApp1
 
         private void btn_Enter_Click(object sender, RoutedEventArgs e)
         {
+            General.Products.Add(new Product("iphone", 20.10, 3.4, "clicks stuff", "none"));
+            General.Products.Add(new Product("samsung", 10.10, 4, "clicks stuff", "none"));
+            General.Products.Add(new Product("who knows", 15.10, 2, "clicks stuff", "none"));
 
+            General.serialize();
         }
+
+ 
     }
 }

@@ -9,14 +9,14 @@ namespace CompareAI
 
     internal class Product
     {
-        public string productName = "";
-        public float productPrice = 0;
-        public float productRating = 0;
-        public string productDesc = "";
+        public string productName { get; set; }
+        public double productRating { get; set; }
+        public double productPrice { get; set; }
+        public string productDesc { get; set; }
         public string productImgPath = "";
         public Dictionary<string, string> OtherInformation = new Dictionary<String, String>();
 
-        public Product(string name, float price, float rating, string description, string imgPath) {
+        public Product(string name, double price, double rating, string description, string imgPath) {
             this.productName = name;
             this.productPrice = price;
             this.productRating = rating;

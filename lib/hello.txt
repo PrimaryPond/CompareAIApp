@@ -1,0 +1,1 @@
+[{"productName":"iphone","productRating":3.4,"productPrice":20.1,"productDesc":"clicks stuff"},{"productName":"samsung","productRating":4,"productPrice":10.1,"productDesc":"clicks stuff"},{"productName":"who knows","productRating":2,"productPrice":15.1,"productDesc":"clicks stuff"}]
