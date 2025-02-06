@@ -16,12 +16,12 @@ namespace CompareAI
         public string productImgPath = "";
         public Dictionary<string, string> OtherInformation = new Dictionary<String, String>();
 
-        public Product(string name, double price, double rating, string description, string imgPath) {
-            this.productName = name;
-            this.productPrice = price;
-            this.productRating = rating;
-            this.productDesc = description;
-            this.productImgPath = imgPath;
+        public Product(string productName, double productPrice, double productRating, string productDesc, string productImgPath) {
+            this.productName = productName;
+            this.productPrice = productPrice;
+            this.productRating = productRating;
+            this.productDesc = productDesc;
+            this.productImgPath = productImgPath;
         }
 
         public void AddOtherInfo(String key, String value)
@@ -33,6 +33,9 @@ namespace CompareAI
         {
             return OtherInformation.Keys;
         }
+
+        override
+        public string ToString() { return productName; }
 
     }
 }

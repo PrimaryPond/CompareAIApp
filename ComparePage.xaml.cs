@@ -74,30 +74,34 @@ namespace CompareAI
 
         private void btn_link_search_two_Click(object sender, RoutedEventArgs e)
         {
-            string jsonString = File.ReadAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\Resources\\profiles.txt");
+            string jsonString = File.ReadAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\..\\lib\\hello.txt");
+            JsonSerializerOptions options = new JsonSerializerOptions();
+            options.IncludeFields = true;
+            if (jsonString.Length > 0)
+            {
+                try { 
+                    General.Products = JsonSerializer.Deserialize<List<Product>>(jsonString, options);
+                }
+                catch {
+                    throw new Exception("no - ComparePage.xaml.cs - deserialze bit");
+                }
+            }
+        }
+
+        public static void saveToTxt()
+        {
+            string jsonString = JsonSerializer.Serialize(General.Products);
+
+            File.WriteAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\lib\\profiles.txt", jsonString);
+        }
+        public static void importFromTxt()
+        {
+            string jsonString = File.ReadAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\lib\\profiles.txt");
             JsonSerializerOptions options = new JsonSerializerOptions();
             options.IncludeFields = true;
             if (jsonString.Length > 0)
             {
                 General.Products = JsonSerializer.Deserialize<List<Product>>(jsonString, options);
-            }
-            Console.WriteLine("\n\n\n\n\n" + General.Products + "\n\n\n\n\n\n");
-        }
-
-        public static void saveToTxt()
-        {
-            string jsonString = JsonSerializer.Serialize(profileList);
-
-            File.WriteAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\Resources\\profiles.txt", jsonString);
-        }
-        public static void importFromTxt()
-        {
-            string jsonString = File.ReadAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\Resources\\profiles.txt");
-            JsonSerializerOptions options = new JsonSerializerOptions();
-            options.IncludeFields = true;
-            if (jsonString.Length > 0)
-            {
-                profileList = JsonSerializer.Deserialize<List<Profile>>(jsonString, options);
             }
         }
     }

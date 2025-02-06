@@ -48,22 +48,7 @@ namespace CompareAI
             }
         }
 
-        public static void saveToTxt()
-        {
-            string jsonString = JsonSerializer.Serialize(profileList);
-
-            File.WriteAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\Resources\\profiles.txt", jsonString);
-        }
-        public static void importFromTxt()
-        {
-            string jsonString = File.ReadAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\Resources\\profiles.txt");
-            JsonSerializerOptions options = new JsonSerializerOptions();
-            options.IncludeFields = true;
-            if (jsonString.Length > 0)
-            {
-                profileList = JsonSerializer.Deserialize<List<Profile>>(jsonString, options);
-            }
-        }
+       
 
 
 

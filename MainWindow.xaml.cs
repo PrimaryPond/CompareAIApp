@@ -24,12 +24,21 @@ namespace WpfApp1
 
         private void btn_startCompare_Click(object sender, RoutedEventArgs e)
         {
+            dosym();
            
+           /*
             ComparePage p = new ComparePage();
             p.Show();
 
             this.Close();
-            
+            */
+        }
+        private async Task dosym()
+        {
+            OllamaProductInfoApp.ProductInfoService service = new OllamaProductInfoApp.ProductInfoService();
+            var productInfo = await OllamaProductInfoApp.ProductInfoService.GetProductInformationAsync("iphone 13");
+            MessageBox.Show(productInfo);
+
         }
     }
 }
