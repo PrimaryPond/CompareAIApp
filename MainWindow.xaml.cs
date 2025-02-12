@@ -1,4 +1,5 @@
 ﻿using CompareAI;
+using Microsoft.Extensions.DependencyInjection;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,9 +18,13 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly ApiKeyManager _apiKeyManager;
+
+        public MainWindow(ApiKeyManager apiKeyManager)
         {
             InitializeComponent();
+            _apiKeyManager = apiKeyManager;
+
         }
 
         private void btn_startCompare_Click(object sender, RoutedEventArgs e)
@@ -35,9 +40,8 @@ namespace WpfApp1
         }
         private async Task dosym()
         {
-            OllamaProductInfoApp.ProductInfoService service = new OllamaProductInfoApp.ProductInfoService();
-            var productInfo = await OllamaProductInfoApp.ProductInfoService.GetProductInformationAsync("iphone 13");
-            MessageBox.Show(productInfo);
+            await GeminiApiClient.startAPI(_apiKeyManager);
+
 
         }
     }

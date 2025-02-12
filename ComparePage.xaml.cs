@@ -37,10 +37,10 @@ namespace CompareAI
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow p = new MainWindow();
+            /*MainWindow p = new MainWindow();
                         p.Show();
 
-                        this.Close();
+                        this.Close();*/
         }
 
         private void btn_search_one_Click(object sender, RoutedEventArgs e)
