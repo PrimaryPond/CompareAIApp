@@ -23,8 +23,9 @@ class GeminiApiClient
             MessageBox.Show(API_URL);
             string response = await GetIphoneInformation();
             MessageBox.Show("done");
-            File.WriteAllText(Environment.CurrentDirectory + "\\..\\..\\..\\hello.txt", response);
-            Console.WriteLine(response);
+            File.WriteAllText(Environment.CurrentDirectory + "\\..\\..\\..\\lib\\hello.txt", response);
+            System.Diagnostics.Debug.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n--------------------\n\\n\n\n");
+            System.Diagnostics.Debug.WriteLine(response);
         }
         catch (Exception ex)
         {
