@@ -69,7 +69,8 @@ namespace CompareAI
             General.Products.Add(new Product("samsung", 10.10, 4, "clicks stuff", "none"));
             General.Products.Add(new Product("who knows", 15.10, 2, "clicks stuff", "none"));
 
-            General.serialize();
+            File.WriteAllText(Environment.CurrentDirectory.ToString() + "\\..\\..\\..\\lib\\hello.txt", General.serialize());
+
         }
 
         private void btn_link_search_two_Click(object sender, RoutedEventArgs e)

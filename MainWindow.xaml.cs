@@ -31,8 +31,8 @@ namespace WpfApp1
         {
             dosym();
            
-           /*
-            ComparePage p = new ComparePage();
+           
+            /*ComparePage p = new ComparePage();
             p.Show();
 
             this.Close();
@@ -40,7 +40,9 @@ namespace WpfApp1
         }
         private async Task dosym()
         {
-            await GeminiApiClient.startAPI(_apiKeyManager);
+            string jsonthing = await GeminiApiClient.findmultipleproducts(_apiKeyManager, "phones");
+
+            General.deserialize(jsonthing);
 
 
         }
