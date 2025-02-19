@@ -22,6 +22,7 @@ namespace WpfApp1
 
         public MainWindow(ApiKeyManager apiKeyManager)
         {
+
             InitializeComponent();
             _apiKeyManager = apiKeyManager;
 
@@ -29,14 +30,14 @@ namespace WpfApp1
 
         private void btn_startCompare_Click(object sender, RoutedEventArgs e)
         {
-            dosym();
+            //dosym();
            
            
-            /*ComparePage p = new ComparePage();
+            ComparePage p = new ComparePage();
             p.Show();
 
             this.Close();
-            */
+            
         }
         private async Task dosym()
         {

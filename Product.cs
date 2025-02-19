@@ -13,8 +13,18 @@ namespace CompareAI
         public double productRating { get; set; }
         public double productPrice { get; set; }
         public string productDesc { get; set; }
+        public List<string> OtherInformation { get; set; }
         public string productImgPath = "";
-        public Dictionary<string, string> OtherInformation = new Dictionary<String, String>();
+        
+
+        public Product(string productName, double productPrice, double productRating, string productDesc, List<string> OtherInformation)
+        {
+            this.productName = productName;
+            this.productPrice = productPrice;
+            this.productRating = productRating;
+            this.productDesc = productDesc;
+            this.OtherInformation = OtherInformation;
+        }
 
         public Product(string productName, double productPrice, double productRating, string productDesc, string productImgPath) {
             this.productName = productName;
@@ -24,16 +34,18 @@ namespace CompareAI
             this.productImgPath = productImgPath;
         }
 
-        public void AddOtherInfo(String key, String value)
+        public Product(string productName, double productPrice, double productRating, string productDesc)
         {
-            OtherInformation.Add(key, value);
+            this.productName = productName;
+            this.productPrice = productPrice;
+            this.productRating = productRating;
+            this.productDesc = productDesc;
         }
 
-        public Dictionary<string,string>.KeyCollection GetKeys()
+        public void AddOtherInfo(String value)
         {
-            return OtherInformation.Keys;
+            OtherInformation.Add(value);
         }
-
         override
         public string ToString() { return productName; }
 

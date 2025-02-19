@@ -1,13 +1,23 @@
 using System;
+using System.Buffers.Text;
+using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
+using System.Windows.Shapes;
 using CompareAI;
 using Microsoft.Extensions.Configuration;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using WpfApp1;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 class GeminiApiClient
@@ -112,36 +122,46 @@ class GeminiApiClient
           ""items"": {{
             ""type"": ""object"",
             ""properties"": {{
-              ""product_name"": {{
+              ""productName"": {{
                 ""type"": ""string"",
                 ""description"": ""The name of the product.""
               }},
-              ""reason"": {{
-                ""type"": ""string"",
-                ""description"": ""A brief explanation of why this product is considered one of the best based on functionality.""
-              }},
-              ""features"": {{
+              ""OtherInformation"": {{
                 ""type"": ""array"",
                 ""items"": {{
                   ""type"": ""string"",
                    ""description"": ""A list of features that are beneficial.""
                 }}
-              }}
+              }},
+              ""productRating"": {{
+                ""type"": ""number"",
+                ""description"": ""The 5 star rating for the product(1-5).""
+              }},
+              ""productPrice"": {{
+                ""type"": ""number"",
+                ""description"": ""The average price for the product.""
+              }},
+              ""productDesc"": {{
+                ""type"": ""string"",
+                ""description"": ""A short description of the product.""
+              }},
             }},
             ""required"": [
-              ""product_name"",
-              ""reason"",
-              ""features""
+              ""productName"",
+              ""OtherInformation"",
+              ""productRating"",
+              ""productPrice"",
+              ""productDesc""
             ]
           }},
-          ""minItems"": 7,
-          ""maxItems"": 7,
-          ""description"": ""A list of the 7 best products based on functionality, along with a short description of why they are included.""
+          ""minItems"": 3,
+          ""maxItems"": 3,
+          ""description"": ""A list of the 3 best products based on functionality, along with a short description of why they are included.""
         }}
     }}
 }}";
 
-
+        
         try
         {
             MessageBox.Show("starting");
@@ -183,7 +203,7 @@ class GeminiApiClient
             };
            
             
-            var json = JsonConvert.SerializeObject(requestBody);
+            //var json = JsonConvert.SerializeObject(requestBody);
             var content = new StringContent(requestData, Encoding.UTF8, "application/json");
 
             var response = await client.PostAsync(API_URL, content);
@@ -197,7 +217,8 @@ class GeminiApiClient
             }
             else
             {
-                throw new HttpRequestException($"API call failed with status code: {response.StatusCode}");
+              
+                throw new HttpRequestException($"API call failed with status code: {response.StatusCode} AND {response.Content}");
             }
         }
     }
