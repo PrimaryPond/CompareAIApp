@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace CompareAI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -33,7 +33,7 @@ namespace WpfApp1
             //dosym();
            
            
-            ComparePage p = new ComparePage();
+            ComparePage p = new ComparePage(_apiKeyManager);
             p.Show();
 
             this.Close();

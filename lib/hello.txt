@@ -1,1 +1,5 @@
-[{"productName":"iphone","productRating":3.4,"productPrice":20.1,"productDesc":"clicks stuff","OtherInformation":null},{"productName":"samsung","productRating":4,"productPrice":10.1,"productDesc":"clicks stuff","OtherInformation":null},{"productName":"who knows","productRating":2,"productPrice":15.1,"productDesc":"clicks stuff","OtherInformation":null}]
+[{"OtherInformation": ["Best toaster for small kitchens", "Many color options available"], "productDesc": "This toaster is small and compact, making it perfect for small kitchens. It has two slots and is easy to use.", "productName": "Cuisinart 2-Slice Compact Toaster", "productPrice": 79.99, "productRating": 4.5}
+,
+{"OtherInformation": ["High-quality construction", "Even toasting"], "productDesc": "This toaster is made of high-quality materials and has even toasting capabilities. It's perfect for families.", "productName": "Breville Smart Toaster", "productPrice": 299.99, "productRating": 4.8}
+,
+{"OtherInformation": ["Versatile", "Affordable"], "productDesc": "This is a basic toaster with 2 slots. It is an excellent option for those looking for an affordable and functional toaster.", "productName": "Black & Decker 2-Slice Toaster", "productPrice": 19.99, "productRating": 4.0}]

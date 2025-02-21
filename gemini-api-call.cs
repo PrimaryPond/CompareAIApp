@@ -51,7 +51,7 @@ class GeminiApiClient
                     ""properties"": {{
                         ""productName"": {{
                             ""type"": ""string"",
-                            ""description"": ""The name of the product""
+                            ""description"": ""The name of the product, including the brand""
                         }},
                         ""productReviews"": {{
                             ""type"": ""integer"",
@@ -106,7 +106,7 @@ class GeminiApiClient
                                 ""role"": ""user"",
                                 ""parts"": [
                                     {{
-                                        ""text"": ""Get information about {productname}.""
+                                        ""text"": ""Get information about the best {productname}.""
                                     }}
                                 ]
                             }}
@@ -124,7 +124,7 @@ class GeminiApiClient
             ""properties"": {{
               ""productName"": {{
                 ""type"": ""string"",
-                ""description"": ""The name of the product.""
+                ""description"": ""The specific name for the product.""
               }},
               ""OtherInformation"": {{
                 ""type"": ""array"",
@@ -144,7 +144,7 @@ class GeminiApiClient
               ""productDesc"": {{
                 ""type"": ""string"",
                 ""description"": ""A short description of the product.""
-              }},
+              }}
             }},
             ""required"": [
               ""productName"",

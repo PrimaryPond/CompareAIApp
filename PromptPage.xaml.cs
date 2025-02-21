@@ -10,16 +10,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace CompareAI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class PromptPage : Window
     {
-        public PromptPage()
+        private readonly ApiKeyManager _apiKeyManager;
+
+        public PromptPage(ApiKeyManager api)
         {
             InitializeComponent();
+            _apiKeyManager = api;
         }
 
 
@@ -29,15 +32,49 @@ namespace WpfApp1
             
         }
 
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return || e.Key == Key.Enter)
+            {
+                callAPI(_apiKeyManager, txtPrompt.Text);
+            }
+        }
+
         private void btn_Enter_Click(object sender, RoutedEventArgs e)
         {
+            callAPI(_apiKeyManager, txtPrompt.Text);
+
+            /*
             General.Products.Add(new Product("iphone", 20.10, 3.4, "clicks stuff", "none"));
             General.Products.Add(new Product("samsung", 10.10, 4, "clicks stuff", "none"));
             General.Products.Add(new Product("who knows", 15.10, 2, "clicks stuff", "none"));
 
-            General.serialize();
+            General.serialize();*/
         }
 
- 
+        private async Task callAPI(ApiKeyManager api, string txt)
+        {
+            string? response = await GeminiApiClient.findmultipleproducts(api, txt);
+
+            if (response != null)
+            {
+                General.deserialize(response);
+            }
+
+            populateProducts();
+
+        }
+
+        private void populateProducts()
+        {
+            stackPanel_viewer.Children.Clear();
+
+            foreach (Product p in General.Products)
+            {
+                stackPanel_viewer.Children.Add(new ProductPanel());
+                
+            }
+        }
+
     }
 }

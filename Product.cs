@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CompareAI
@@ -15,7 +16,9 @@ namespace CompareAI
         public string productDesc { get; set; }
         public List<string> OtherInformation { get; set; }
         public string productImgPath = "";
-        
+
+        [JsonConstructor]
+        private Product() { }
 
         public Product(string productName, double productPrice, double productRating, string productDesc, List<string> OtherInformation)
         {
@@ -40,6 +43,7 @@ namespace CompareAI
             this.productPrice = productPrice;
             this.productRating = productRating;
             this.productDesc = productDesc;
+            this.OtherInformation = null;
         }
 
         public void AddOtherInfo(String value)

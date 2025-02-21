@@ -12,6 +12,7 @@ namespace CompareAI
     internal class General
     {
         public static List<Product> Products = new List<Product>();
+        
         public static string APICall(string prompt)
         {
 
@@ -41,7 +42,9 @@ namespace CompareAI
 
         public static void deserialize(string json)
         {
-            List<Product>? attempt = JsonSerializer.Deserialize<List<Product>>(json);
+            JsonSerializerOptions options = new JsonSerializerOptions();
+            options.IncludeFields = true;
+            List<Product>? attempt = JsonSerializer.Deserialize<List<Product>>(json, options);
 
             if (attempt != null) {
                 Products = attempt;

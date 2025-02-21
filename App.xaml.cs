@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.IO;
 using System.Windows;
-namespace WpfApp1
+namespace CompareAI
 {
     /// <summary>
     /// Interaction logic for App.xaml

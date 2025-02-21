@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using WpfApp1;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Text.Json;
+using System.Diagnostics;
 
 namespace CompareAI
 {
@@ -24,9 +25,14 @@ namespace CompareAI
     /// </summary>
     public partial class ComparePage : Window
     {
-        public ComparePage()
+        private Product productSelectOne;
+        private Product productSelectTwo;
+        private readonly ApiKeyManager _apiKeyManager;
+
+        public ComparePage(ApiKeyManager api)
         {
             InitializeComponent();
+            _apiKeyManager = api;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -37,22 +43,22 @@ namespace CompareAI
 
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
-            /*MainWindow p = new MainWindow();
+            MainWindow p = new MainWindow(_apiKeyManager);
                         p.Show();
 
-                        this.Close();*/
+                        this.Close();
         }
 
         private void btn_search_one_Click(object sender, RoutedEventArgs e)
         {
-            PromptPage p = new PromptPage();
+            PromptPage p = new PromptPage(_apiKeyManager);
             p.Show();
 
         }
 
         private void btn_search_two_Click(object sender, RoutedEventArgs e)
         {
-            PromptPage p = new PromptPage();
+            PromptPage p = new PromptPage(_apiKeyManager);
             p.Show();
         }
 
@@ -60,7 +66,7 @@ namespace CompareAI
         {
             Results p = new Results();
             p.Show();
-
+            
         }
 
         private void btn_link_search_one_Click(object sender, RoutedEventArgs e)
@@ -81,7 +87,8 @@ namespace CompareAI
             if (jsonString.Length > 0)
             {
                 try { 
-                    General.Products = JsonSerializer.Deserialize<List<Product>>(jsonString, options);
+                    General.deserialize(jsonString);
+                    //General.Products = JsonSerializer.Deserialize<List<Product>>(jsonString, options);
                 }
                 catch {
                     throw new Exception("no - ComparePage.xaml.cs - deserialze bit");
