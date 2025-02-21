@@ -43,5 +43,11 @@ namespace CompareAI
         {
             InitializeComponent();
         }
+        public ProductPanel(string name, string desc)
+        {
+            InitializeComponent();
+            ProductName = name;
+            ProductDesc = desc;
+        }
     }
 }

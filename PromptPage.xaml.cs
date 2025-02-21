@@ -71,7 +71,7 @@ namespace CompareAI
 
             foreach (Product p in General.Products)
             {
-                stackPanel_viewer.Children.Add(new ProductPanel());
+                stackPanel_viewer.Children.Add(new ProductPanel(p.productName,p.productDesc));
                 
             }
         }
