@@ -8,4 +8,21 @@
     <SolidColorBrush x:Key="TextColor" Color="#FFFFFF82"/>
     <SolidColorBrush x:Key="ButtonColor" Color="#FF5B5B5B"/>
     <SolidColorBrush x:Key="ButtonTextColor" Color="#FFFFFF"/>
+
+    <Style x:Key="buttonHover" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Border" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF505050" TargetName="Border" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

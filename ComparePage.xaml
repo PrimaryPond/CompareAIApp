@@ -17,7 +17,7 @@
 
             <Grid>
                 <Label Content="CompareAI" Margin="10,10,0,0" Foreground="{StaticResource TextColor}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="24" FontFamily="Bahnschrift Light" Padding="5,5,5,5" RenderTransformOrigin="-0.433,0.246"/>
-                <Button x:Name="btn_home" Content="Home" Margin="703,0,0,0" Background="#00000000" Foreground="{StaticResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light" Padding="5,5,5,5" Height="54" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#002F2F2F" Click="btn_home_Click"/>
+                <Button x:Name="btn_home" Style="{StaticResource buttonHover}" Content="Home" Margin="703,0,0,0" Background="#00000000" Foreground="{StaticResource TextColor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontFamily="Bahnschrift Light" Padding="5,5,5,5" Height="54" Width="87" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="#002F2F2F" Click="btn_home_Click" Cursor="Hand"/>
             </Grid>
 
 
@@ -25,7 +25,7 @@
         <Grid Grid.Row="1">
             <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="70,12,426,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4"/>
             <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="425,12,71,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4"/>
-            <Button x:Name="btn_start" Content="Start Comparison" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="47" Width="146" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_start_Click">
+            <Button x:Name="btn_start" Content="Start Comparison" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="47" Width="146" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_start_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="21"/>
@@ -33,29 +33,29 @@
                 </Button.Resources>
             </Button>
 
-            <StackPanel Margin="80,22,436,0" VerticalAlignment="Top" Height="266">
+            <StackPanel x:Name="stk_one" Margin="80,22,436,0" VerticalAlignment="Top" Height="266">
                 <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="0,0,0,42" Width="238">
                     <Label Content="Select First Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
                 </Border>
-                <Button x:Name="btn_search_one" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Content="Search for product" Cursor="Hand" Width="136" Margin="0,0,0,5" BorderBrush="{DynamicResource ButtonColor}" Height="30" Click="btn_search_one_Click"/>
+                <Button x:Name="btn_search_one" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" Content="Search for product" Cursor="Hand" Width="136" Margin="0,0,0,5" BorderBrush="{DynamicResource ButtonColor}" Height="30" Click="btn_search_one_Click"/>
                 <Label Content="         - or -&#xA;Paste Source Link" Width="132" Foreground="{StaticResource TextColor}" Height="40" HorizontalContentAlignment="Center" Margin="0,0,0,11"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox TextWrapping="Wrap" Background="{StaticResource ButtonColor}"  Text="" Width="199" TextChanged="TextBox_TextChanged" BorderBrush="{DynamicResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}"/>
-                    <Button x:Name="btn_link_search_one" Content="Search" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_link_search_one_Click"/>
+                    <Button x:Name="btn_link_search_one" Content="Search" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_link_search_one_Click" Width="44"/>
                 </StackPanel>
 
 
             </StackPanel>
 
-            <StackPanel Margin="435,22,81,86" VerticalAlignment="Top">
+            <StackPanel x:Name="stk_two" Margin="435,22,81,0" VerticalAlignment="Top" Height="266">
                 <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="0,0,0,42" Width="238">
                     <Label Content="Select Second Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
                 </Border>
-                <Button x:Name="btn_search_two" Content="Search for product" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" Width="130" Margin="0,0,0,5" BorderBrush="{DynamicResource ButtonColor}" Height="30" Click="btn_search_two_Click"/>
+                <Button x:Name="btn_search_two" Content="Search for product" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" Width="130" Margin="0,0,0,5" BorderBrush="{DynamicResource ButtonColor}" Height="30" Click="btn_search_two_Click"/>
                 <Label Content="         - or -&#xA;Paste Source Link" Width="132" Foreground="{StaticResource TextColor}" Height="40" HorizontalContentAlignment="Center" Margin="0,0,0,11"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox TextWrapping="Wrap" Text="" Width="199" TextChanged="TextBox_TextChanged" Background="{StaticResource ButtonColor}" BorderBrush="{StaticResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}"/>
-                    <Button x:Name="btn_link_search_two" Content="Search" Background="{StaticResource ButtonColor}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_link_search_two_Click"/>
+                    <Button x:Name="btn_link_search_two" Content="Search" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_link_search_two_Click" Width="43"/>
                 </StackPanel>
 
             </StackPanel>

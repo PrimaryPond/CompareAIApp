@@ -25,8 +25,7 @@ namespace CompareAI
     /// </summary>
     public partial class ComparePage : Window
     {
-        private Product productSelectOne;
-        private Product productSelectTwo;
+        
         private readonly ApiKeyManager _apiKeyManager;
 
         public ComparePage(ApiKeyManager api)
@@ -51,14 +50,14 @@ namespace CompareAI
 
         private void btn_search_one_Click(object sender, RoutedEventArgs e)
         {
-            PromptPage p = new PromptPage(_apiKeyManager);
+            PromptPage p = new PromptPage(_apiKeyManager, this);
             p.Show();
 
         }
 
         private void btn_search_two_Click(object sender, RoutedEventArgs e)
         {
-            PromptPage p = new PromptPage(_apiKeyManager);
+            PromptPage p = new PromptPage(_apiKeyManager, this);
             p.Show();
         }
 
@@ -111,6 +110,22 @@ namespace CompareAI
             {
                 General.Products = JsonSerializer.Deserialize<List<Product>>(jsonString, options);
             }
+            
+        }
+
+        public void update()
+        {
+
+            if (General.productSelectOne == null)
+            {
+                stk_one.Children.Clear();
+                stk_one.Children.Add(new product_square());
+            }
+            else if (General.productSelectTwo != null)
+            {
+               stk_two.Children.Clear();
+            }
+            
         }
     }
 }

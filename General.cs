@@ -12,7 +12,8 @@ namespace CompareAI
     internal class General
     {
         public static List<Product> Products = new List<Product>();
-        
+        public static Product productSelectOne;
+        public static Product productSelectTwo;
         public static string APICall(string prompt)
         {
 

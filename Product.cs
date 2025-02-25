@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace CompareAI
 {
 
-    internal class Product
+    public class Product
     {
         public string productName { get; set; }
         public double productRating { get; set; }

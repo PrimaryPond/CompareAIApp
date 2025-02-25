@@ -20,6 +20,7 @@ namespace CompareAI
     /// </summary>
     public partial class ProductPanel : UserControl
     {
+        private Product product;
         private string productName;
         public string ProductName
         {
@@ -43,11 +44,19 @@ namespace CompareAI
         {
             InitializeComponent();
         }
-        public ProductPanel(string name, string desc)
+        public ProductPanel(Product p)
         {
             InitializeComponent();
-            ProductName = name;
-            ProductDesc = desc;
+            product = p;
+            ProductName = p.productName;
+            ProductDesc = p.productDesc;
+            
+        }
+
+        private void btn_select_Click(object sender, RoutedEventArgs e)
+        {
+            General.productSelectOne = product;
+            Window.GetWindow(this).Close();
         }
     }
 }

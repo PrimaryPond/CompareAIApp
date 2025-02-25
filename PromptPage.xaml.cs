@@ -18,13 +18,15 @@ namespace CompareAI
     public partial class PromptPage : Window
     {
         private readonly ApiKeyManager _apiKeyManager;
-
-        public PromptPage(ApiKeyManager api)
+        private ComparePage _page;
+        public PromptPage(ApiKeyManager api, ComparePage page)
         {
-            InitializeComponent();
+            InitializeComponent(); 
             _apiKeyManager = api;
+            _page = page;
         }
-
+        
+        public void closeMethod(object sender, System.EventArgs e) { _page.update(); }
 
         private void TextBox_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -71,7 +73,13 @@ namespace CompareAI
 
             foreach (Product p in General.Products)
             {
-                stackPanel_viewer.Children.Add(new ProductPanel(p.productName,p.productDesc));
+                ProductPanel a;
+                try
+                {
+                    a = new ProductPanel(p);
+                }
+                catch { continue; }
+                stackPanel_viewer.Children.Add(a);
                 
             }
         }
