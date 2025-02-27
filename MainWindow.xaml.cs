@@ -25,6 +25,7 @@ namespace CompareAI
 
             InitializeComponent();
             _apiKeyManager = apiKeyManager;
+            General.setApi(apiKeyManager);
 
         }
 

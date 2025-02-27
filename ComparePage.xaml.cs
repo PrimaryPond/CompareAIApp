@@ -116,10 +116,10 @@ namespace CompareAI
         public void update()
         {
 
-            if (General.productSelectOne == null)
+            if (General.productSelectOne != null)
             {
-                stk_one.Children.Clear();
-                stk_one.Children.Add(new product_square());
+                
+                //product_one_box.Children.Add(new product_square(General.productSelectOne));
             }
             else if (General.productSelectTwo != null)
             {

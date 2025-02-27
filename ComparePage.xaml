@@ -23,7 +23,9 @@
 
         </Border>
         <Grid Grid.Row="1">
-            <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="70,12,426,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4"/>
+            <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="70,12,426,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4">
+                <local:product_square x:Name="product_one_box" Margin="13,9,9,9"/>
+            </Border>
             <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="425,12,71,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4"/>
             <Button x:Name="btn_start" Content="Start Comparison" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="47" Width="146" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_start_Click">
                 <Button.Resources>
@@ -32,7 +34,7 @@
                     </Style>
                 </Button.Resources>
             </Button>
-
+            <!--
             <StackPanel x:Name="stk_one" Margin="80,22,436,0" VerticalAlignment="Top" Height="266">
                 <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="0,0,0,42" Width="238">
                     <Label Content="Select First Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
@@ -46,7 +48,7 @@
 
 
             </StackPanel>
-
+-->
             <StackPanel x:Name="stk_two" Margin="435,22,81,0" VerticalAlignment="Top" Height="266">
                 <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="0,0,0,42" Width="238">
                     <Label Content="Select Second Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>

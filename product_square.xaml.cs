@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -50,11 +51,18 @@ namespace CompareAI
         }
         public product_square(Product p)
         {
-            InitializeComponent();
+            InitializeComponent(); 
             product = p;
             ProductName = p.productName;
             ProductDesc = p.productDesc;
 
         }
+
+        private void tb_name_TextChanged()
+        {
+
+        }
+       
+       
     }
 }

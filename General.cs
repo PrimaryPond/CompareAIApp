@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.IO;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Windows;
 
 namespace CompareAI
 {
@@ -14,6 +15,8 @@ namespace CompareAI
         public static List<Product> Products = new List<Product>();
         public static Product productSelectOne;
         public static Product productSelectTwo;
+        private static ApiKeyManager _apiKeyManager = null;
+
         public static string APICall(string prompt)
         {
 
@@ -32,7 +35,10 @@ namespace CompareAI
              
              */
         }
-
+        public static void setApi(ApiKeyManager api)
+        {
+            _apiKeyManager = api;
+        }
         public static string serialize()
         {
             string jsonString = JsonSerializer.Serialize(Products);
@@ -52,10 +58,6 @@ namespace CompareAI
             }
         }
 
-       
-
-
-
-
+        
     }
 }

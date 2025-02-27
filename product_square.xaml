@@ -6,20 +6,57 @@
              xmlns:local="clr-namespace:CompareAI"
              mc:Ignorable="d" 
              d:DesignHeight="284" d:DesignWidth="286" Background="{DynamicResource ForegroundColor}">
-    <Grid>
+
+    <Grid x:Name="stk_one" Margin="10,10,10,10" VerticalAlignment="Top" Height="266">
         <Grid.RowDefinitions>
-            <RowDefinition Height="41*"/>
-            <RowDefinition Height="101*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="116*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="tb_name" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Product Name ex example example example exmaple example example example &#xD;&#xA;" VerticalAlignment="Center" Width="240" IsReadOnly="True" Focusable="False" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource TextColor}" FontSize="16" Height="66"/>
-        <TextBox x:Name="tb_desc" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" IsReadOnly="True" Focusable="False" Height="222" Foreground="{DynamicResource ButtonTextColor}" Background="{DynamicResource ButtonColor}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Padding="3,2,3,2" Grid.Row="1"/>
-        <Button Content="X" Style="{StaticResource buttonHover}" HorizontalAlignment="Left" Margin="255,22,0,0" VerticalAlignment="Top" Width="21" Height="14" RenderTransformOrigin="0.506,0.539" VerticalContentAlignment="Center" Background="{DynamicResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}" FontSize="10" Padding="1,49,1,26">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="2"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+        <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="14,0,14,2">
+            <Label Content="Select First Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
+        </Border>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+            <StackPanel x:Name="stk_name_close" Width="266" Orientation="Horizontal" Visibility="Collapsed">
+                <TextBox x:Name="tb_name" AcceptsReturn="True" TextWrapping="Wrap" Text="Product Name ex example  " Width="245" IsReadOnly="True" Focusable="False" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource TextColor}" FontSize="16"/>
+                <Button Content="X" Width="21" Height="14" RenderTransformOrigin="0.506,0.539" VerticalContentAlignment="Center" Background="{DynamicResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}" FontSize="10" Padding="1,49,1,26" VerticalAlignment="Top" Margin="0,6,0,0">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="2"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Style>
+                        <StaticResource ResourceKey="buttonHover"/>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+            <TextBox x:Name="tb_desc" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBox" Width="266" IsReadOnly="True" Focusable="False" Foreground="{DynamicResource ButtonTextColor}" Background="{DynamicResource ButtonColor}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Padding="3,2,3,2" Grid.Row="1" Margin="0,10,0,22" Visibility="Collapsed"/>
+
+            <Button x:Name="btn_search_one" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" Content="Search for product" Cursor="Hand" Width="136" Margin="0,0,0,5" BorderBrush="{DynamicResource ButtonColor}" Height="30"/>
+            <Label Content="         - or -&#xA;Paste Source Link" Width="132" Foreground="{StaticResource TextColor}" Height="40" HorizontalContentAlignment="Center" Margin="0,0,0,11"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox TextWrapping="Wrap" Background="{StaticResource ButtonColor}"  Text="" Width="199" BorderBrush="{DynamicResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}"/>
+                <Button x:Name="btn_link_search_one" Content="Search" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Width="44"/>
+            </StackPanel>
+        </StackPanel>
 
     </Grid>
+    <!--
+    <StackPanel><StackPanel Width="266" Orientation="Horizontal">
+            <TextBox x:Name="tb_name" AcceptsReturn="True" TextWrapping="Wrap" Text="Product Name ex example  &#xA;l" Width="245" IsReadOnly="True" Focusable="False" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource TextColor}" FontSize="16"/>
+            <Button Content="X" Width="21" Height="14" RenderTransformOrigin="0.506,0.539" VerticalContentAlignment="Center" Background="{DynamicResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}" FontSize="10" Padding="1,49,1,26" VerticalAlignment="Top" Margin="0,6,0,0">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Style>
+                    <StaticResource ResourceKey="buttonHover"/>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+        <TextBox x:Name="tb_desc" HorizontalAlignment="Center" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="266" IsReadOnly="True" Focusable="False" Height="222" Foreground="{DynamicResource ButtonTextColor}" Background="{DynamicResource ButtonColor}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Padding="3,2,3,2" Grid.Row="1"/>
+
+
+
+    </StackPanel>-->
 </UserControl>
