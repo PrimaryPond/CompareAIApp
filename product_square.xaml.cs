@@ -40,17 +40,27 @@ namespace CompareAI
                 tb_desc.Text = product.productDesc;
             }
         }
+        public string NumberID
+        public string numberID
+        {
+            get { return NumberID; }
+            set
+            {
+                NumberID = value;
+            }
+        }
         public product_square()
         {
-
+            
             InitializeComponent();            
             product = new Product("", -1, -1, "");
             ProductName = "Error, couldn't find title";
             ProductDesc = "Error, couldn't find descritption";
 
         }
-        public product_square(Product p)
+        public product_square(Product p, string num)
         {
+            numberID = num;
             InitializeComponent(); 
             product = p;
             ProductName = p.productName;
