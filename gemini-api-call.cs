@@ -63,7 +63,11 @@ class GeminiApiClient
                             ""format"": ""double"",
                             ""description"": ""The average rating""
                         }},
-                        ""productDesc"": {{
+                        ""productShortDesc"": {{
+                            ""type"": ""string"",
+                            ""description"": ""The product description""
+                        }},
+                        ""productLongDesc"": {{
                             ""type"": ""string"",
                             ""description"": ""The product description""
                         }}
@@ -72,7 +76,8 @@ class GeminiApiClient
                         ""productName"",
                         ""productReviews"",
                         ""productRating"",
-                        ""productDesc""
+                        ""productShortDesc"",
+                        ""productLongDesc""
                     ]
                     }}
                 }}
@@ -141,9 +146,13 @@ class GeminiApiClient
                 ""type"": ""number"",
                 ""description"": ""The average price for the product.""
               }},
-              ""productDesc"": {{
+              ""productShortDesc"": {{
                 ""type"": ""string"",
                 ""description"": ""A short description of the product.""
+              }},
+              ""productLongDesc"": {{
+                ""type"": ""string"",
+                ""description"": ""A paragaph description of the product.""
               }}
             }},
             ""required"": [
@@ -151,7 +160,8 @@ class GeminiApiClient
               ""OtherInformation"",
               ""productRating"",
               ""productPrice"",
-              ""productDesc""
+              ""productShortDesc"",
+              ""productLongDesc""
             ]
           }},
           ""minItems"": 3,

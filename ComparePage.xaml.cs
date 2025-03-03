@@ -32,7 +32,7 @@ namespace CompareAI
         {
             InitializeComponent();
             _apiKeyManager = api;
-            border_one.children.Add(new product_square(api));
+            border_one.Child = new product_square(api);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -119,8 +119,11 @@ namespace CompareAI
 
             if (General.productSelectOne != null)
             {
+
+                ((product_square)border_one.Child).tb_name.Text = General.productSelectOne.productName;
+                ((product_square)border_one.Child).tb_desc.Text = General.productSelectOne.productLongDesc;
+                ((product_square)border_one.Child).changeVis();
                 
-                //product_one_box.Children.Add(new product_square(General.productSelectOne));
             }
             else if (General.productSelectTwo != null)
             {

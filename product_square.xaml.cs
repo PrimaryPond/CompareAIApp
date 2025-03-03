@@ -34,22 +34,14 @@ namespace CompareAI
         }
         public string ProductDesc
         {
-            get { return product.productDesc; }
+            get { return product.productShortDesc; }
             set
             {
-                product.productDesc = value;
-                tb_desc.Text = product.productDesc;
+                product.productShortDesc = value;
+                tb_desc.Text = product.productShortDesc;
             }
         }
-        public string NumberID
-        public string numberID
-        {
-            get { return NumberID; }
-            set
-            {
-                NumberID = value;
-            }
-        }
+        
         public product_square(ApiKeyManager api)
         {
             
@@ -62,11 +54,10 @@ namespace CompareAI
         }
         public product_square(Product p, ApiKeyManager api)
         {
-            numberID = num;
             InitializeComponent(); 
             product = p;
             ProductName = p.productName;
-            ProductDesc = p.productDesc;
+            ProductDesc = p.productShortDesc;
             _apikey = api;
 
         }
@@ -76,12 +67,33 @@ namespace CompareAI
 
         }
 
+        public void changeVis()
+        {
+            if (stk_name_close.Visibility == Visibility.Visible)
+            {
+                stk_name_close.Visibility = Visibility.Collapsed;
+                tb_desc.Visibility = Visibility.Collapsed;
+                
+            }
+            else
+            {
+                stk_name_close.Visibility = Visibility.Visible;
+                tb_desc.Visibility = Visibility.Visible;
+                
+            }
+        }
         private void btn_search_one_Click(object sender, RoutedEventArgs e)
         {
             PromptPage p = new PromptPage(_apikey, (CompareAI.ComparePage)Window.GetWindow(this));
             p.Show();
 
             
+        }
+
+        private void btn_product_close_click(object sender, RoutedEventArgs e)
+        {
+            General.productSelectOne = null;
+            changeVis();
         }
     }
 }

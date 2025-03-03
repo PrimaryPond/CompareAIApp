@@ -13,36 +13,40 @@ namespace CompareAI
         public string productName { get; set; }
         public double productRating { get; set; }
         public double productPrice { get; set; }
-        public string productDesc { get; set; }
+        public string productShortDesc { get; set; }
+        public string productLongDesc { get; set; }
         public List<string> OtherInformation { get; set; }
         public string productImgPath = "";
 
         [JsonConstructor]
         private Product() { }
 
-        public Product(string productName, double productPrice, double productRating, string productDesc, List<string> OtherInformation)
+        public Product(string productName, double productPrice, double productRating, string productShortDesc, string productLongDesc, List<string> OtherInformation)
         {
             this.productName = productName;
             this.productPrice = productPrice;
             this.productRating = productRating;
-            this.productDesc = productDesc;
+            this.productShortDesc = productShortDesc;
+            this.productLongDesc = productLongDesc;
             this.OtherInformation = OtherInformation;
+
         }
 
-        public Product(string productName, double productPrice, double productRating, string productDesc, string productImgPath) {
+        public Product(string productName, double productPrice, double productRating, string productShortDesc, string productImgPath) {
             this.productName = productName;
             this.productPrice = productPrice;
             this.productRating = productRating;
-            this.productDesc = productDesc;
+            this.productShortDesc = productShortDesc;
             this.productImgPath = productImgPath;
         }
 
-        public Product(string productName, double productPrice, double productRating, string productDesc)
+        public Product(string productName, double productPrice, double productRating, string productShortDesc)
         {
             this.productName = productName;
             this.productPrice = productPrice;
             this.productRating = productRating;
-            this.productDesc = productDesc;
+            this.productShortDesc = productShortDesc;
+            this.productLongDesc = productLongDesc;
             this.OtherInformation = null;
         }
 

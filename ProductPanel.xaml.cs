@@ -49,7 +49,7 @@ namespace CompareAI
             InitializeComponent();
             product = p;
             ProductName = p.productName;
-            ProductDesc = p.productDesc;
+            ProductDesc = p.productShortDesc;
             
         }
 
