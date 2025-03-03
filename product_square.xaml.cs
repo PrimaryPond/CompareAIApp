@@ -41,11 +41,18 @@ namespace CompareAI
                 tb_desc.Text = product.productDesc;
             }
         }
-
-        
-        public product_square(ApiKeyManager api)
+        public string NumberID
+        public string numberID
         {
-
+            get { return NumberID; }
+            set
+            {
+                NumberID = value;
+            }
+        }
+        public product_square()
+        {
+            
             InitializeComponent();            
             product = new Product("", -1, -1, "");
             ProductName = "Error, couldn't find title";
@@ -55,6 +62,7 @@ namespace CompareAI
         }
         public product_square(Product p, ApiKeyManager api)
         {
+            numberID = num;
             InitializeComponent(); 
             product = p;
             ProductName = p.productName;
