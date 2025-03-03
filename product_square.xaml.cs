@@ -50,7 +50,7 @@ namespace CompareAI
                 NumberID = value;
             }
         }
-        public product_square()
+        public product_square(ApiKeyManager api)
         {
             
             InitializeComponent();            
