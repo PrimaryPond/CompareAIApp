@@ -21,6 +21,7 @@ namespace CompareAI
     /// </summary>
     public partial class product_square : UserControl
     {
+        private readonly ApiKeyManager _apikey;
         Product product;
         public string ProductName
         {
@@ -40,21 +41,25 @@ namespace CompareAI
                 tb_desc.Text = product.productDesc;
             }
         }
-        public product_square()
+
+        
+        public product_square(ApiKeyManager api)
         {
 
             InitializeComponent();            
             product = new Product("", -1, -1, "");
             ProductName = "Error, couldn't find title";
             ProductDesc = "Error, couldn't find descritption";
+            _apikey = api;
 
         }
-        public product_square(Product p)
+        public product_square(Product p, ApiKeyManager api)
         {
             InitializeComponent(); 
             product = p;
             ProductName = p.productName;
             ProductDesc = p.productDesc;
+            _apikey = api;
 
         }
 
@@ -62,7 +67,13 @@ namespace CompareAI
         {
 
         }
-       
-       
+
+        private void btn_search_one_Click(object sender, RoutedEventArgs e)
+        {
+            PromptPage p = new PromptPage(_apikey, (CompareAI.ComparePage)Window.GetWindow(this));
+            p.Show();
+
+            
+        }
     }
 }

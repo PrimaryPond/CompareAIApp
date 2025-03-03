@@ -23,10 +23,10 @@
 
         </Border>
         <Grid Grid.Row="1">
-            <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="70,12,426,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4">
-                <local:product_square x:Name="product_one_box" Margin="13,9,9,9"/>
+            <Border x:Name="border_one" BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="70,12,426,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4">
+               <!--" <local:product_square x:Name="product_one_box" Margin="13,9,9,9"/>-->
             </Border>
-            <Border BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="425,12,71,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4"/>
+            <Border x:Name="border_two" BorderBrush="{DynamicResource ForegroundColor}" BorderThickness="1" Margin="425,12,71,76" Background="{DynamicResource ForegroundColor}" CornerRadius="4,4,4,4"/>
             <Button x:Name="btn_start" Content="Start Comparison" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" HorizontalAlignment="Center" Margin="0,326,0,0" VerticalAlignment="Top" Height="47" Width="146" Cursor="Hand" BorderBrush="{DynamicResource ButtonColor}" Click="btn_start_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">

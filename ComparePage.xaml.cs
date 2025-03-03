@@ -32,6 +32,7 @@ namespace CompareAI
         {
             InitializeComponent();
             _apiKeyManager = api;
+            border_one.children.Add(new product_square(api));
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
