@@ -32,7 +32,8 @@ namespace CompareAI
         {
             InitializeComponent();
             _apiKeyManager = api;
-            border_one.Child = new product_square(api);
+            border_one.Child = new product_square(api, true);
+            border_two.Child = new product_square(api, false);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -51,14 +52,14 @@ namespace CompareAI
 
         private void btn_search_one_Click(object sender, RoutedEventArgs e)
         {
-            PromptPage p = new PromptPage(_apiKeyManager, this);
+            PromptPage p = new PromptPage(_apiKeyManager, this, true);
             p.Show();
 
         }
 
         private void btn_search_two_Click(object sender, RoutedEventArgs e)
         {
-            PromptPage p = new PromptPage(_apiKeyManager, this);
+            PromptPage p = new PromptPage(_apiKeyManager, this, false);
             p.Show();
         }
 
@@ -122,12 +123,14 @@ namespace CompareAI
 
                 ((product_square)border_one.Child).tb_name.Text = General.productSelectOne.productName;
                 ((product_square)border_one.Child).tb_desc.Text = General.productSelectOne.productLongDesc;
-                ((product_square)border_one.Child).changeVis();
+                ((product_square)border_one.Child).setVis(true);
                 
             }
             else if (General.productSelectTwo != null)
             {
-               stk_two.Children.Clear();
+                ((product_square)border_two.Child).tb_name.Text = General.productSelectTwo.productName;
+                ((product_square)border_two.Child).tb_desc.Text = General.productSelectTwo.productLongDesc;
+                ((product_square)border_two.Child).setVis(true);
             }
             
         }

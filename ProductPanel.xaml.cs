@@ -22,6 +22,7 @@ namespace CompareAI
     {
         private Product product;
         private string productName;
+        private bool isone;
         public string ProductName
         {
             get { return productName; }
@@ -40,22 +41,31 @@ namespace CompareAI
                 tbProductDesc.Text = productDesc;
             }
         }
-        public ProductPanel()
+        public ProductPanel(bool isone)
         {
             InitializeComponent();
+            this.isone = isone;
         }
-        public ProductPanel(Product p)
+        public ProductPanel(Product p, bool isone)
         {
             InitializeComponent();
             product = p;
             ProductName = p.productName;
             ProductDesc = p.productShortDesc;
+            this.isone = isone;
             
         }
 
         private void btn_select_Click(object sender, RoutedEventArgs e)
         {
-            General.productSelectOne = product;
+            if (isone)
+            {
+                General.productSelectOne = product;
+            }
+            else
+            {
+                General.productSelectTwo = product;
+            }
             Window.GetWindow(this).Close();
         }
     }

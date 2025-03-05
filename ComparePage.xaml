@@ -47,9 +47,7 @@
                 </StackPanel>
 
 
-            </StackPanel>
--->
-            <StackPanel x:Name="stk_two" Margin="435,22,81,0" VerticalAlignment="Top" Height="266">
+            </StackPanel><StackPanel x:Name="stk_two" Margin="435,22,81,0" VerticalAlignment="Top" Height="266">
                 <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="0,0,0,42" Width="238">
                     <Label Content="Select Second Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
                 </Border>
@@ -61,6 +59,8 @@
                 </StackPanel>
 
             </StackPanel>
+-->
+            
 
 
 

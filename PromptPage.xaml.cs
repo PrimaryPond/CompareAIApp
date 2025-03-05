@@ -19,11 +19,18 @@ namespace CompareAI
     {
         private readonly ApiKeyManager _apiKeyManager;
         private ComparePage _page;
-        public PromptPage(ApiKeyManager api, ComparePage page)
+        private bool _isone;
+        public PromptPage(ApiKeyManager api, ComparePage page, bool isone)
         {
             InitializeComponent(); 
             _apiKeyManager = api;
             _page = page;
+            _isone = isone;
+
+            if (General.Products.Count > 0)
+            {
+                populateProducts();
+            }
         }
         
         public void closeMethod(object sender, System.EventArgs e) { _page.update(); }
@@ -76,7 +83,7 @@ namespace CompareAI
                 ProductPanel a;
                 try
                 {
-                    a = new ProductPanel(p);
+                    a = new ProductPanel(p, this._isone);
                 }
                 catch { continue; }
                 stackPanel_viewer.Children.Add(a);

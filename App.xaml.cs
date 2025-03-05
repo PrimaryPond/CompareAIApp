@@ -19,6 +19,7 @@ namespace CompareAI
         public static IServiceProvider ServiceProvider { get; private set; }
         protected override void OnStartup(StartupEventArgs e)
         {
+
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -30,7 +31,10 @@ namespace CompareAI
             ServiceProvider = services.BuildServiceProvider();
             var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
             mainWindow.Show();
+
+            
         }
+        
         private void ConfigureServices(IServiceCollection services)
         {
             // Register your services

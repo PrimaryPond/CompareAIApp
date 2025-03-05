@@ -9,14 +9,15 @@
 
     <Grid x:Name="stk_one" Margin="10,10,10,10" VerticalAlignment="Top" Height="266">
         <Grid.RowDefinitions>
-            <RowDefinition Height="17*"/>
-            <RowDefinition Height="116*"/>
+            <RowDefinition Height="Auto" MinHeight="35"/>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="Auto" MinHeight="113.96"/>
         </Grid.RowDefinitions>
         <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="14,0,14,2">
             <Label Content="Select First Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
         </Border>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <StackPanel x:Name="stk_name_close" Width="266" Orientation="Horizontal" Visibility="Visible">
+        <StackPanel x:Name="stk_name_close" Visibility="Collapsed" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="1">
+            <StackPanel Width="266" Orientation="Horizontal" Visibility="Visible">
                 <TextBox x:Name="tb_name" AcceptsReturn="True" TextWrapping="Wrap" Text="Product Name ex example  " Width="245" IsReadOnly="True" Focusable="False" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource TextColor}" FontSize="16"/>
                 <Button x:Name="btn_product_close" Content="X" Width="21" Height="14" RenderTransformOrigin="0.506,0.539" VerticalContentAlignment="Center" Background="{DynamicResource ButtonColor}" Foreground="{DynamicResource ButtonTextColor}" FontSize="10" Padding="1,49,1,26" VerticalAlignment="Top" Margin="0,6,0,0" Click="btn_product_close_click">
                     <Button.Resources>
@@ -29,8 +30,9 @@
                     </Button.Style>
                 </Button>
             </StackPanel>
-            <TextBox x:Name="tb_desc" Visibility="Visible" HorizontalAlignment="Center" TextWrapping="Wrap" Text="[{&quot;OtherInformation&quot;: [&quot;Excellent cameras&quot;, &quot;Long battery life&quot;, &quot;Fast performance&quot;], &quot;productLongDesc&quot;: &quot;The Phone X is our best phone yet.  With its stunning display, blazing-fast processor, and incredible camera system, the Phone X delivers an unparalleled mobile experience.  Enjoy all-day battery life, seamless multitasking, and stunning visuals, all in an elegantly designed package.&quot;, &quot;productName&quot;: &quot;Phone X&quot;, &quot;productPrice&quot;: 999.99, &quot;productRating&quot;: 4.8, &quot;productShortDesc&quot;: &quot;Our flagship phone. Stunning display, amazing cameras, and blazing-fast performance.&quot;}, {&quot;OtherInformation&quot;: [&quot;Affordable price&quot;, &quot;Good battery life&quot;, &quot;Solid performance&quot;], &quot;productLongDesc&quot;: &quot;The Phone Y offers a fantastic balance of performance and affordability.  It boasts a bright display, reliable battery life, and smooth performance for everyday tasks. A great option for budget-conscious users.&quot;, &quot;productName&quot;: &quot;Phone Y&quot;, &quot;productPrice&quot;: 399.99, &quot;productRating&quot;: 4.2, &quot;productShortDesc&quot;: &quot;Great value phone. Excellent performance at an affordable price.&quot;}, {&quot;OtherInformation&quot;: [&quot;Durable design&quot;, &quot;Powerful processor&quot;, &quot;Great for gaming&quot;], &quot;productLongDesc&quot;: &quot;The Phone Z is built for power users and gamers.  It features a robust design, a top-of-the-line processor, and a long-lasting battery. The Phone Z handles demanding tasks and games with ease.&quot;, &quot;productName&quot;: &quot;Phone Z&quot;, &quot;productPrice&quot;: 799.99, &quot;productRating&quot;: 4.5, &quot;productShortDesc&quot;: &quot;Powerful phone built for performance and durability&quot;}]&#xD;&#xA;" Width="266" IsReadOnly="True" Focusable="False" Foreground="{DynamicResource ButtonTextColor}" Background="{DynamicResource ButtonColor}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Padding="3,2,3,2" Grid.Row="1" Margin="0,10,0,22" MaxHeight="80" />
-
+            <TextBox x:Name="tb_desc" Visibility="Visible" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Errrrrr" Width="266" IsReadOnly="True" Focusable="False" Foreground="{DynamicResource ButtonTextColor}" Background="{DynamicResource ButtonColor}" BorderBrush="{x:Null}" BorderThickness="0,0,0,0" Padding="3,2,3,2" Grid.Row="1" Margin="0,0,0,10" MaxHeight="104" VerticalScrollBarVisibility="Auto" Height="90" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Margin="0,10,0,0">
             <Button x:Name="btn_search_one" Background="{StaticResource ButtonColor}" Style="{StaticResource buttonHover}" Foreground="{StaticResource ButtonTextColor}" Content="Search for product" Cursor="Hand" Width="136" Margin="0,0,0,5" BorderBrush="{DynamicResource ButtonColor}" Height="30" Click="btn_search_one_Click"/>
             <Label Content="         - or -&#xA;Paste Source Link" Width="132" Foreground="{StaticResource TextColor}" Height="40" HorizontalContentAlignment="Center" Margin="0,0,0,11"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

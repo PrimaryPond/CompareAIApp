@@ -23,6 +23,7 @@ namespace CompareAI
     {
         private readonly ApiKeyManager _apikey;
         Product product;
+        private bool isone;
         public string ProductName
         {
             get { return product.productName; }
@@ -42,7 +43,7 @@ namespace CompareAI
             }
         }
         
-        public product_square(ApiKeyManager api)
+        public product_square(ApiKeyManager api, bool isone)
         {
             
             InitializeComponent();            
@@ -50,15 +51,17 @@ namespace CompareAI
             ProductName = "Error, couldn't find title";
             ProductDesc = "Error, couldn't find descritption";
             _apikey = api;
+            this.isone = isone;
 
         }
-        public product_square(Product p, ApiKeyManager api)
+        public product_square(Product p, ApiKeyManager api, bool isone)
         {
             InitializeComponent(); 
             product = p;
             ProductName = p.productName;
             ProductDesc = p.productShortDesc;
             _apikey = api;
+            this.isone = isone;
 
         }
 
@@ -67,24 +70,22 @@ namespace CompareAI
 
         }
 
-        public void changeVis()
+        public void setVis(bool isVisible)
         {
-            if (stk_name_close.Visibility == Visibility.Visible)
+            if (isVisible)
             {
-                stk_name_close.Visibility = Visibility.Collapsed;
-                tb_desc.Visibility = Visibility.Collapsed;
+                stk_name_close.Visibility = Visibility.Visible;
                 
             }
             else
             {
-                stk_name_close.Visibility = Visibility.Visible;
-                tb_desc.Visibility = Visibility.Visible;
+                stk_name_close.Visibility = Visibility.Collapsed;
                 
             }
         }
         private void btn_search_one_Click(object sender, RoutedEventArgs e)
         {
-            PromptPage p = new PromptPage(_apikey, (CompareAI.ComparePage)Window.GetWindow(this));
+            PromptPage p = new PromptPage(_apikey, (CompareAI.ComparePage)Window.GetWindow(this), isone);
             p.Show();
 
             
@@ -92,8 +93,15 @@ namespace CompareAI
 
         private void btn_product_close_click(object sender, RoutedEventArgs e)
         {
-            General.productSelectOne = null;
-            changeVis();
+            if (isone)
+            {
+                General.productSelectOne = null;
+            }
+            else
+            {
+                General.productSelectTwo = null;
+            }
+            setVis(false);
         }
     }
 }

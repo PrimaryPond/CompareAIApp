@@ -34,16 +34,16 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
-
+<!--
   <ItemGroup>
     <Compile Update=".xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Results.xaml.cs">
+    <Compile Update="ResultsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
-
+-->
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -51,8 +51,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Results.xaml">
+    <Page Update="ResultsPage.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
 
