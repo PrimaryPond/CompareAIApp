@@ -65,8 +65,11 @@ namespace CompareAI
 
         private void btn_start_Click(object sender, RoutedEventArgs e)
         {
-            Results p = new Results();
-            p.Show();
+            if (General.productSelectOne != null && General.productSelectTwo != null)
+            {
+                ResultsPage p = new ResultsPage(General.productSelectOne, General.productSelectTwo);
+                p.Show();
+            }
             
         }
 
@@ -126,7 +129,7 @@ namespace CompareAI
                 ((product_square)border_one.Child).setVis(true);
                 
             }
-            else if (General.productSelectTwo != null)
+            if (General.productSelectTwo != null)
             {
                 ((product_square)border_two.Child).tb_name.Text = General.productSelectTwo.productName;
                 ((product_square)border_two.Child).tb_desc.Text = General.productSelectTwo.productLongDesc;

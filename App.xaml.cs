@@ -29,7 +29,7 @@ namespace CompareAI
             var services = new ServiceCollection();
             ConfigureServices(services);
             ServiceProvider = services.BuildServiceProvider();
-            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
+            var mainWindow = ServiceProvider.GetRequiredService<ResultsPage>();
             mainWindow.Show();
 
             
@@ -40,7 +40,7 @@ namespace CompareAI
             // Register your services
             services.AddSingleton<IConfiguration>(Configuration);
             services.AddSingleton<ApiKeyManager>();
-            services.AddTransient<MainWindow>();
+            services.AddTransient<ResultsPage>();
             // Add other services...
         }
     }

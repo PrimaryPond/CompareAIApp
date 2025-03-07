@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto" MinHeight="113.96"/>
         </Grid.RowDefinitions>
         <Border BorderBrush="{DynamicResource TextColor}" BorderThickness="0,0,0,1" Margin="14,0,14,2">
-            <Label Content="Select First Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
+            <Label Content="Select Product&#xD;&#xA;" Foreground="{StaticResource TextColor}" Width="228" HorizontalAlignment="Center" Height="32" HorizontalContentAlignment="Center" FontSize="16"/>
         </Border>
         <StackPanel x:Name="stk_name_close" Visibility="Collapsed" Grid.Row="1" VerticalAlignment="Top" Grid.RowSpan="1">
             <StackPanel Width="266" Orientation="Horizontal" Visibility="Visible">
